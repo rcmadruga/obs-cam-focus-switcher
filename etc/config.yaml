@@ -1,0 +1,41 @@
+# OBS WebSocket Configuration
+obs_config:
+  url: "ws://localhost:4455"
+  password: "your_password_here"
+
+# Direct monitor to scene mapping
+monitor_scenes:
+  - monitor: 0
+    scene: "BRIO-Only"    # Any matched application on monitor 0 triggers this scene
+  - monitor: 1
+    scene: "Logi-Only"     # Any matched application on monitor 1 triggers this scene
+
+# Application patterns to match
+applications:
+  - name: "GoBe"
+    patterns:
+      - "Fleet Management"
+      - "GoBe - "
+
+  - name: "Google Meet"
+    patterns:
+      - "meet\\.google\\.com/[a-z|-]+"
+      - "Google Meet.*Meeting"
+      - "Meet - "
+  - name: "Zoom"
+    patterns:
+      - "zoom\\.us/j/\\d+"
+      - "Zoom Meeting"
+      - "Zoom Webinar"
+  
+  - name: "Microsoft Teams"
+    patterns:
+      - "teams\\.microsoft\\.com/.*meeting"
+      - "teams\\.live\\.com"
+      - "Microsoft Teams.*Meeting"
+      - "Meeting in.*Teams"
+  
+  - name: "Webex"
+    patterns:
+      - "webex\\.com/.*meet"
+      - "Cisco Webex Meeting"
